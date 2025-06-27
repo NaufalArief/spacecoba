@@ -42,7 +42,7 @@
                             <tr>
                                 <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                                     @if ($member->photo)
-                                        <img src="{{ asset('storage/' . $member->photo) }}" alt="{{ $member->nama }}"
+                                        <img src="{{ asset('uploads/' . $member->photo) }}" alt="{{ $member->nama }}"
                                             class="w-16 h-16 object-cover rounded-full">
                                     @else
                                         <span class="text-gray-400">No Photo</span>

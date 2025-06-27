@@ -43,7 +43,7 @@
             <div class="mb-6">
                 <label class="block text-gray-700 text-sm font-bold mb-2">Current Photo Profile:</label>
                 @if ($member->photo)
-                    <img src="{{ asset('storage/' . $member->photo) }}" alt="{{ $member->nama }}"
+                    <img src="{{ asset('uploads/' . $member->photo) }}" alt="{{ $member->nama }}"
                         class="w-32 h-32 object-cover rounded-lg mb-2">
                 @else
                     <p class="text-gray-500">No photo uploaded.</p>
@@ -57,7 +57,7 @@
             <div class="mb-6">
                 <label class="block text-gray-700 text-sm font-bold mb-2">Current QR Code:</label>
                 @if ($member->qr)
-                    <img src="{{ asset('storage/' . $member->qr) }}" alt="QR Code"
+                    <img src="{{ asset('uploads/' . $member->qr) }}" alt="QR Code"
                         class="w-32 h-32 object-cover rounded-lg mb-2">
                 @else
                     <p class="text-gray-500">No QR code uploaded.</p>

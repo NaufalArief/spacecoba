@@ -11,7 +11,7 @@
 
                 {{-- Menampilkan foto dari path yang tersimpan di database --}}
                 {{-- Jika tidak ada foto, gunakan placeholder dari ui-avatars.com --}}
-                <img src="{{ $member->photo ? asset('storage/' . $member->photo) : 'https://ui-avatars.com/api/?name=' . urlencode($member->nama) . '&background=282c34&color=fff' }}"
+                <img src="{{ $member->photo ? asset('uploads/' . $member->photo) : 'https://ui-avatars.com/api/?name=' . urlencode($member->nama) . '&background=282c34&color=fff' }}"
                     alt="Foto {{ $member->nama }}" class="member-photo">
 
                 <div class="member-overlay">

@@ -392,7 +392,7 @@
             <div class="member-header">
                 <div class="member-avatar">
                     {{-- Menampilkan foto profil dari storage, atau placeholder jika tidak ada --}}
-                    <img src="{{ $member->photo ? asset('storage/' . $member->photo) : 'https://ui-avatars.com/api/?name=' . urlencode($member->nama) . '&background=4338ca&color=fff&size=128' }}"
+                    <img src="{{ $member->photo ? asset('uploads/' . $member->photo) : 'https://ui-avatars.com/api/?name=' . urlencode($member->nama) . '&background=4338ca&color=fff&size=128' }}"
                         alt="Foto {{ $member->nama }}" class="avatar-img">
                 </div>
                 <h3>{{ $member->nama }}</h3>
@@ -426,7 +426,7 @@
                 {{-- Hanya tampilkan bagian ini jika path QR code ada di database --}}
                 @if ($member->qr)
                     <div class="qr-code">
-                        <img src="{{ asset('storage/' . $member->qr) }}" alt="QR Code" class="qr-image">
+                        <img src="{{ asset('uploads/' . $member->qr) }}" alt="QR Code" class="qr-image">
                     </div>
                 @endif
 

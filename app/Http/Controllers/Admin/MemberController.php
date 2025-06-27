@@ -43,12 +43,14 @@ class MemberController extends Controller
         $data = $request->only(['npm', 'nama', 'quotes', 'role']);
 
         if ($request->hasFile('photo')) {
-            $path = $request->file('photo')->store('members/photos', 'public');
+            // $path = $request->file('photo')->store('members/photos', 'public');
+            $path = $request->file('photo')->store('members/photos', 'uploads');
             $data['photo'] = $path;
         }
 
         if ($request->hasFile('qr')) {
-            $path = $request->file('qr')->store('members/qrs', 'public');
+            // $path = $request->file('qr')->store('members/qrs', 'public');
+            $path = $request->file('qr')->store('members/qrs', 'uploads');
             $data['qr'] = $path;
         }
 
@@ -83,18 +85,20 @@ class MemberController extends Controller
         if ($request->hasFile('photo')) {
             // Delete old photo if it exists
             if ($member->photo) {
-                Storage::disk('public')->delete($member->photo);
+                Storage::disk('uploads')->delete($member->photo);
             }
-            $path = $request->file('photo')->store('members/photos', 'public');
+            // $path = $request->file('photo')->store('members/photos', 'public');
+            $path = $request->file('photo')->store('members/photos', 'uploads');
             $data['photo'] = $path;
         }
 
         if ($request->hasFile('qr')) {
             // Delete old qr if it exists
             if ($member->qr) {
-                Storage::disk('public')->delete($member->qr);
+                Storage::disk('uploads')->delete($member->qr);
             }
-            $path = $request->file('qr')->store('members/qrs', 'public');
+            // $path = $request->file('qr')->store('members/qrs', 'public');
+            $path = $request->file('qr')->store('members/qrs', 'uploads');
             $data['qr'] = $path;
         }
 
@@ -110,10 +114,10 @@ class MemberController extends Controller
     {
         // Delete files from storage first
         if ($member->photo) {
-            Storage::disk('public')->delete($member->photo);
+            Storage::disk('uploads')->delete($member->photo);
         }
         if ($member->qr) {
-            Storage::disk('public')->delete($member->qr);
+            Storage::disk('uploads')->delete($member->qr);
         }
 
         $member->delete();

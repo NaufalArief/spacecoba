@@ -30,6 +30,7 @@ Route::get('/members/{member:npm}', [PublicMemberController::class, 'show'])->na
 
 Route::get('/about', [PublicPostsController::class, 'index'])->name('posts');
 
+
 /*
 |--------------------------------------------------------------------------
 | Admin Routes
