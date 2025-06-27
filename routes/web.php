@@ -20,7 +20,7 @@ Route::get('/about', function () {
     return view('about');
 })->name('about');
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    return view('admin.dashboard');
 })->name('dashboard');
 
 // Rute untuk halaman member publik (diperbarui)
